@@ -9,7 +9,7 @@
   :root {
     --bg: #FAFAF8;
     --ink: #111110;
-    --muted: #6B6B63;
+    --muted: #20262b;
     --accent: #2D5BE3;
     --accent-light: #EEF2FF;
     --rule: #E2E0DA;
@@ -79,7 +79,7 @@
 
   .hero-eyebrow {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
+    font-size: 1.1rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent);
@@ -98,10 +98,11 @@
   }
 
   .hero-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: clamp(3rem, 5.5vw, 5.5rem);
     line-height: 1.05;
     letter-spacing: -0.02em;
+	text-transform: uppercase;
     margin-bottom: 2rem;
   }
 
@@ -111,7 +112,7 @@
   }
 
   .hero-desc {
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: var(--muted);
     max-width: 460px;
     line-height: 1.75;
@@ -134,7 +135,7 @@
   }
 
   .stat-num {
-    font-family: 'Playfair Display', serif;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 2rem;
     letter-spacing: -0.03em;
     display: block;
@@ -143,7 +144,7 @@
 
   .stat-label {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
+    font-size: 0.85rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--muted);
@@ -191,7 +192,7 @@
     padding: 1.5rem 2rem;
     border-top: 1px solid var(--rule);
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.95rem;
     letter-spacing: 0.1em;
     color: var(--muted);
     display: flex;
@@ -217,9 +218,10 @@
   }
 
   .section-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 1.75rem;
     letter-spacing: -0.01em;
+	text-transform: uppercase;
   }
 
   /* PROJECT */
@@ -261,7 +263,7 @@
   }
 
   .project-num {
-    font-family: 'Playfair Display', serif;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 2.25rem;
     color: var(--rule);
     line-height: 1;
@@ -282,7 +284,7 @@
 
   .project-org {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.62rem;
+    font-size: 1.1rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--muted);
@@ -290,15 +292,16 @@
   }
 
   .project-name {
-    font-family: 'Playfair Display', serif;
+    font-family: ' IBM Plex Mono', monospace;
     font-size: 1.6rem;
     line-height: 1.15;
     letter-spacing: -0.01em;
+	text-transform: uppercase;
     margin-bottom: 1rem;
   }
 
   .project-desc {
-    font-size: 0.875rem;
+    font-size: 1.2rem;
     color: var(--muted);
     line-height: 1.7;
     margin-bottom: 1.5rem;
@@ -308,7 +311,7 @@
 
   .project-block-label {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.58rem;
+    font-size: 0.7rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--accent);
@@ -316,7 +319,7 @@
   }
 
   .project-block-text {
-    font-size: 0.85rem;
+    font-size: 1.2rem;
     color: var(--ink);
     line-height: 1.65;
   }
@@ -325,13 +328,13 @@
   .impact {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.7rem;
     background: var(--accent-light);
     border: 1px solid #C7D4F8;
     padding: 0.3rem 0.75rem;
     border-radius: 2rem;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.62rem;
+    font-size: 1.3rem;
     letter-spacing: 0.08em;
     color: var(--accent);
     margin-top: 0.5rem;
@@ -349,7 +352,7 @@
 
   .project-role {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.62rem;
+    font-size: 0.82rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
@@ -397,10 +400,11 @@
   }
 
   .about-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 2.25rem;
     line-height: 1.15;
     letter-spacing: -0.02em;
+	text-transform: uppercase;
     margin-bottom: 1.5rem;
   }
 
@@ -419,7 +423,7 @@
 
   .skill-group-label {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.58rem;
+    font-size: 0.88rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent);
@@ -447,9 +451,10 @@
   }
 
   .footer-name {
-    font-family: 'Playfair Display', serif;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 1.25rem;
     letter-spacing: -0.01em;
+	text-transform: uppercase;
   }
 
   .footer-contact {
@@ -510,9 +515,9 @@
 
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow">Product Manager & AI Builder</div>
+    <div class="hero-eyebrow">Product Owner/Manager</div>
     <h1 class="hero-title">Defining<br>what's worth<br><em>building.</em></h1>
-    <p class="hero-desc">5+ years taking products from ambiguous opportunity to shipped reality — across enterprise, startup, and research environments. Engineering background that earns trust with dev teams. Product instinct that earns trust with stakeholders.</p>
+    <p class="hero-desc">5+ years taking products from ambiguous opportunity to shipped reality; across enterprise, startup, and research environments. Engineering background that earns trust with dev teams. Product instinct that earns trust with stakeholders.</p>
 
     <div class="hero-stats">
       <div class="stat">
@@ -543,7 +548,7 @@
 
   <div class="hero-right">
     <div class="hero-right-top">
-      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80" alt="Product work">
+      <img src="imagenes/ME.png" alt="Product work">
     </div>
     <div class="hero-right-bottom">
       <span>waterdave81@gmail.com</span>
@@ -566,14 +571,14 @@
       <div class="project-top">
         <div class="project-meta">
           <span class="project-num">01</span>
-          <span class="project-type">Enterprise / Hardware-Software</span>
+          <span class="project-type">Enterprise / Embedded Software</span>
         </div>
         <div class="project-org">John Deere — Global Markets</div>
-        <h3 class="project-name">Suspension Control System for Brazilian Market Sprayer</h3>
-        <p class="project-desc">Chassis & PowerTrain domain. A high-clearance sprayer engineered for Brazil's steep agricultural terrain — requiring deep discovery with field operators and cross-functional delivery across global engineering teams.</p>
+        <h3 class="project-name">Suspension Control System for Sprayers</h3>
+        <p class="project-desc">Chassis & PowerTrain domain. A high-clearance sprayer engineered for Brazil's steep agricultural terrain; requiring deep discovery with field operators and cross-functional delivery across global engineering teams.</p>
         <div class="project-block">
           <div class="project-block-label">The Challenge</div>
-          <div class="project-block-text">Translate real-world field constraints from Brazilian operators into precise embedded software requirements — while coordinating delivery across multicultural teams in multiple time zones.</div>
+          <div class="project-block-text">Translate real-world field constraints from Brazilian operators into precise embedded software requirements, while coordinating delivery across multicultural teams in multiple time zones.</div>
         </div>
         <div class="project-block" style="margin-top:0.875rem">
           <div class="project-block-label">The Outcome</div>
@@ -582,25 +587,119 @@
         <div class="impact">↑ 26% suspension transition performance</div>
       </div>
       <div class="project-footer">
-        <span class="project-role">Developer / Product Owner</span>
+        <span class="project-role">Product Owner</span>
         <span class="project-status status-upcoming">Launch 2027</span>
       </div>
     </div>
     <div class="project-image">
-      <img src="https://drive.google.com/file/d/1Bj-HWDsdlxuajE-xU2J1MXXJJl59dRxP/view?usp=sharing" alt="John Deere Sprayer">
+      <img src="imagenes/JD.png" alt="John Deere Sprayer">
     </div>
   </article>
-
-  <!-- 02 SAAS PLATFORM -->
+  
+    <!-- 2 G-TRAP -->
   <article class="project">
     <div class="project-content">
       <div class="project-top">
         <div class="project-meta">
           <span class="project-num">02</span>
-          <span class="project-type">SaaS / Software</span>
+          <span class="project-type">Consultant/ Embedded AI</span>
         </div>
-        <div class="project-org">STGuimel</div>
-        <h3 class="project-name">Sensing as a Service — IoT Data Platform</h3>
+        <div class="project-org">REEFAC — Reef Aquaculture Conservancy</div>
+        <h3 class="project-name">Autonomous Reef Monitoring System</h3>
+        <p class="project-desc">An autonomous AI computer vision system for reef biodiversity monitoring — deployed underwater for researchers and governments. Built from first principles under real marine constraints.</p>
+        <div class="project-block">
+          <div class="project-block-label">The Challenge</div>
+          <div class="project-block-text">The device's underwater installation location made maintenance access extremely complex; maximum operational autonomy was a hard requirement, not a preference.</div>
+        </div>
+        <div class="project-block" style="margin-top:0.875rem">
+          <div class="project-block-label">The Outcome</div>
+          <div class="project-block-text">AI CV camera with deep sleep power strategy delivering ~15 days of battery life in real underwater deployment conditions. Launched and operational in 2025.</div>
+        </div>
+        <div class="impact">~15 days battery life in field conditions</div>
+      </div>
+      <div class="project-footer">
+        <span class="project-role">Product Manager</span>
+        <span class="project-status status-launched">Launched 2025</span>
+      </div>
+    </div>
+    <div class="project-image">
+      <img src="imagenes/GTRAP.png" alt="Underwater reef">
+    </div>
+  </article>
+
+  <!-- 03 SYNTI / GTM -->
+  <article class="project">
+    <div class="project-content">
+      <div class="project-top">
+        <div class="project-meta">
+          <span class="project-num">03</span>
+          <span class="project-type">Consultant/ Market Research</span>
+        </div>
+        <div class="project-org">REEFAC — Climate Tech</div>
+        <h3 class="project-name">Computer Vision Platform Go-to-Market Strategy</h3>
+        <p class="project-desc">Market research and investor narrative for an embedded computer vision platform targeting smart aquaculture, biodiversity monitoring, and environmental surveillance, sectors with combined markets exceeding $50B by 2030.</p>
+        <div class="project-block">
+          <div class="project-block-label">The Challenge</div>
+          <div class="project-block-text">Translate deeply technical embedded AI constraints into a compelling investment narrative for international audiences; Asian and Canadian investors unfamiliar with field-deployed CV systems.</div>
+        </div>
+        <div class="project-block" style="margin-top:0.875rem">
+          <div class="project-block-label">The Outcome</div>
+          <div class="project-block-text">Full investor pitch deck: problem framing, $50B+ market sizing, architecture narrative, GTM strategy, and revenue model. Delivered to international investors in 2025.</div>
+        </div>
+        <div class="impact">$50B+ addressable market identified</div>
+      </div>
+      <div class="project-footer">
+        <span class="project-role">Product Manager / Market Research</span>
+        <span class="project-status status-launched">Delivered 2025</span>
+      </div>
+    </div>
+    <div class="project-image">
+      <img src="imagenes/SYNTHI.png" alt="Ocean technology">
+    </div>
+  </article>
+ 
+
+  <!-- 04 AVISPA IOT -->
+  <article class="project">
+    <div class="project-content">
+      <div class="project-top">
+        <div class="project-meta">
+          <span class="project-num">04</span>
+          <span class="project-type">Startup / IoT</span>
+        </div>
+        <div class="project-org">STG</div>
+        <h3 class="project-name">Remote IoT Air Quality Data Logger</h3>
+        <p class="project-desc">A solar-powered autonomous IoT device for real-time environmental monitoring — designed for governments in México to measure air quality across polluted cities without depending on stable power or connectivity infrastructure.</p>
+        <div class="project-block">
+          <div class="project-block-label">The Challenge</div>
+          <div class="project-block-text">Deliver a low-cost, high-precision system capable of reliable remote deployment anywhere — translating a public policy need into a concrete hardware product with measurable data quality requirements.</div>
+        </div>
+        <div class="project-block" style="margin-top:0.875rem">
+          <div class="project-block-label">The Outcome</div>
+          <div class="project-block-text">Remote device transmitting reliable data via MQTT with configurable sampling rate. ML model PoC improved data accuracy from 79% to 85%. Deployed in production with Consejo de Nuevo León.</div>
+        </div>
+        <div class="impact">79% → 85% data accuracy via ML pipeline</div>
+      </div>
+      <div class="project-footer">
+        <span class="project-role">Product Manager</span>
+        <span class="project-status status-launched">Launched 2025</span>
+      </div>
+    </div>
+    <div class="project-image">
+      <img src="imagenes/AVISPA.png" alt="IoT sensor in field">
+    </div>
+  </article>
+  
+  <!-- 05 SAAS PLATFORM -->
+  <article class="project">
+    <div class="project-content">
+      <div class="project-top">
+        <div class="project-meta">
+          <span class="project-num">05</span>
+          <span class="project-type">Startup / SaaS</span>
+        </div>
+        <div class="project-org">STG</div>
+        <h3 class="project-name">Sensing as a Service — Data Platform</h3>
         <p class="project-desc">A SaaS platform to host, visualize, and analyze data from distributed IoT sensors — translating raw environmental data into actionable intelligence for government users.</p>
         <div class="project-block">
           <div class="project-block-label">The Challenge</div>
@@ -618,24 +717,24 @@
       </div>
     </div>
     <div class="project-image">
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80" alt="Data dashboard">
+      <img src="imagenes/SAAS.png" alt="Data dashboard">
     </div>
   </article>
 
-  <!-- 03 AI AGENT -->
+  <!-- 06 AI AGENT -->
   <article class="project">
     <div class="project-content">
       <div class="project-top">
         <div class="project-meta">
-          <span class="project-num">03</span>
-          <span class="project-type">AI / LLM Agent</span>
+          <span class="project-num">06</span>
+          <span class="project-type">Startup / AI</span>
         </div>
-        <div class="project-org">STGuimel</div>
-        <h3 class="project-name">G-Aire — LLM Agent for Air Quality Analysis</h3>
-        <p class="project-desc">An autonomous LLM-based agent that connects to the platform API, analyzes real-time sensor data, and delivers environmental insights in natural language — making complex data accessible to non-technical users.</p>
+        <div class="project-org">STG</div>
+        <h3 class="project-name">LLM Agent for Air Quality Analysis</h3>
+        <p class="project-desc">An autonomous LLM-based agent that connects to the platform API, analyzes real-time sensor data, and delivers environmental insights in natural language; making complex data accessible to non-technical users.</p>
         <div class="project-block">
           <div class="project-block-label">The Challenge</div>
-          <div class="project-block-text">Build an AI agent that synthesizes complex multi-sensor data with minimum resource consumption — and define evaluation criteria for consistency, hallucination rate, and factual accuracy before production deployment.</div>
+          <div class="project-block-text">Build an AI agent that synthesizes complex multi-sensor data with minimum resource consumption, and define evaluation criteria for consistency, hallucination rate, and factual accuracy before production deployment.</div>
         </div>
         <div class="project-block" style="margin-top:0.875rem">
           <div class="project-block-label">The Outcome</div>
@@ -648,69 +747,7 @@
       </div>
     </div>
     <div class="project-image">
-      <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=900&q=80" alt="AI visualization">
-    </div>
-  </article>
-
-  <!-- 04 G-TRAP -->
-  <article class="project">
-    <div class="project-content">
-      <div class="project-top">
-        <div class="project-meta">
-          <span class="project-num">04</span>
-          <span class="project-type">Embedded AI / Field Deployment</span>
-        </div>
-        <div class="project-org">REEFAC — Reef Aquaculture Conservancy</div>
-        <h3 class="project-name">G-Trap — Autonomous Reef Monitoring System</h3>
-        <p class="project-desc">An autonomous AI computer vision system for reef biodiversity monitoring — deployed underwater for researchers and governments. Built from first principles under real marine constraints.</p>
-        <div class="project-block">
-          <div class="project-block-label">The Challenge</div>
-          <div class="project-block-text">The device's underwater installation location made maintenance access extremely complex — maximum operational autonomy was a hard requirement, not a preference.</div>
-        </div>
-        <div class="project-block" style="margin-top:0.875rem">
-          <div class="project-block-label">The Outcome</div>
-          <div class="project-block-text">AI CV camera with deep sleep power strategy delivering ~15 days of battery life in real underwater deployment conditions. Launched and operational in 2025.</div>
-        </div>
-        <div class="impact">~15 days battery life in field conditions</div>
-      </div>
-      <div class="project-footer">
-        <span class="project-role">Product Manager</span>
-        <span class="project-status status-launched">Launched 2025</span>
-      </div>
-    </div>
-    <div class="project-image">
-      <img src="https://images.unsplash.com/photo-1682687220063-4742bd7fd538?w=900&q=80" alt="Underwater reef">
-    </div>
-  </article>
-
-  <!-- 05 SYNTI / GTM -->
-  <article class="project">
-    <div class="project-content">
-      <div class="project-top">
-        <div class="project-meta">
-          <span class="project-num">05</span>
-          <span class="project-type">Market Research / GTM</span>
-        </div>
-        <div class="project-org">REEFAC — Climate Tech</div>
-        <h3 class="project-name">Synti — Embedded CV Platform Go-to-Market</h3>
-        <p class="project-desc">Market research and investor narrative for an embedded computer vision platform targeting smart aquaculture, biodiversity monitoring, and environmental surveillance — sectors with combined markets exceeding $50B by 2030.</p>
-        <div class="project-block">
-          <div class="project-block-label">The Challenge</div>
-          <div class="project-block-text">Translate deeply technical embedded AI constraints into a compelling investment narrative for international audiences — Asian and Canadian investors unfamiliar with field-deployed CV systems.</div>
-        </div>
-        <div class="project-block" style="margin-top:0.875rem">
-          <div class="project-block-label">The Outcome</div>
-          <div class="project-block-text">Full investor pitch deck: problem framing, $50B+ market sizing, architecture narrative, GTM strategy, and revenue model. Delivered to international investors in 2025.</div>
-        </div>
-        <div class="impact">$50B+ addressable market identified</div>
-      </div>
-      <div class="project-footer">
-        <span class="project-role">Product Manager / Market Research</span>
-        <span class="project-status status-launched">Delivered 2025</span>
-      </div>
-    </div>
-    <div class="project-image">
-      <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=900&q=80" alt="Ocean technology">
+      <img src="imagenes/AGENT.png" alt="AI visualization">
     </div>
   </article>
 
@@ -719,8 +756,8 @@
 <section id="about" class="about">
   <div class="about-left">
     <h2 class="about-title">Product thinking<br>with an <em>engineer's<br>instinct.</em></h2>
-    <p class="about-text">I started as an embedded software engineer — building systems where a bad call had real consequences. That shaped how I approach product: with precision, with respect for technical constraints, and with a bias toward shipping things that actually work.</p>
-    <p class="about-text">Today I work across the full product lifecycle — from discovery and strategy to delivery, go-to-market, and AI integration. I'm most effective in environments where the problem is ambiguous and the stakes are real.</p>
+    <p class="about-text">I started as an embedded software engineer, building systems where a bad call had real consequences. That shaped how I approach product: with precision, with respect for technical constraints, and with a bias toward shipping things that actually work.</p>
+    <p class="about-text">Today I work across the full product lifecycle; from discovery and strategy to delivery, go-to-market, and AI integration. I'm most effective in environments where the problem is ambiguous and the stakes are real.</p>
     <p class="about-text">B.Eng. Electronics & Digital Systems — TECNM, 2021.<br>Monterrey, MX. Open to remote international roles.</p>
   </div>
   <div class="about-right">
@@ -739,10 +776,10 @@
       <div>
         <div class="skill-group-label">AI & Technical</div>
         <ul class="skill-list">
-          <li>LLM Agent Development</li>
-          <li>ML Pipeline Design</li>
+          <li>AI Integration</li>
+          <li>Business Intelligence</li>
           <li>IoT Systems</li>
-          <li>Computer Vision</li>
+          <li>Data Analysis</li>
           <li>Embedded Systems</li>
           <li>SaaS Architecture</li>
         </ul>
