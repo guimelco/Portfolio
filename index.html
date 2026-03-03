@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>David Pascual — Product Manager Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF8;
+    --ink: #111110;
+    --muted: #6B6B63;
+    --accent: #2D5BE3;
+    --accent-light: #EEF2FF;
+    --rule: #E2E0DA;
+    --card: #F4F2ED;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 3rem;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .nav-logo {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    padding-top: 5rem;
+    display: grid;
+    grid-template-columns: 55% 45%;
+  }
+
+  .hero-left {
+    padding: 5rem 3rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--rule);
+  }
+
+  .hero-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 5.5vw, 5.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 460px;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-bottom: 2.5rem;
+  }
+
+  .stat {
+    background: var(--bg);
+    padding: 1.25rem 1rem;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    letter-spacing: -0.03em;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  .tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid var(--rule);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2rem;
+    color: var(--muted);
+    background: var(--card);
+  }
+
+  .tag-accent {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-right-top {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero-right-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(10%);
+  }
+
+  .hero-right-bottom {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--rule);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  /* SECTION HEADER */
+  .section-header {
+    padding: 3.5rem 3rem 1.5rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+  }
+
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  /* PROJECT */
+  .project {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 480px;
+    border-bottom: 1px solid var(--rule);
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+
+  .project.visible { opacity: 1; transform: translateY(0); }
+
+  .project-content {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid var(--rule);
+  }
+
+  .project:nth-child(even) .project-content {
+    order: 2;
+    border-right: none;
+    border-left: 1px solid var(--rule);
+  }
+
+  .project:nth-child(even) .project-image { order: 1; }
+
+  .project-top { margin-bottom: 1.5rem; }
+
+  .project-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.25rem;
+    color: var(--rule);
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+
+  .project-type {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent-light);
+    background: var(--accent-light);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2rem;
+  }
+
+  .project-org {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+  }
+
+  .project-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+  }
+
+  .project-desc {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-block { margin-bottom: 0.875rem; }
+
+  .project-block-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+  }
+
+  .project-block-text {
+    font-size: 0.85rem;
+    color: var(--ink);
+    line-height: 1.65;
+  }
+
+  /* IMPACT PILL */
+  .impact {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--accent-light);
+    border: 1px solid #C7D4F8;
+    padding: 0.3rem 0.75rem;
+    border-radius: 2rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-top: 0.5rem;
+  }
+
+  .project-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .project-role {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .project-status {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.65rem;
+    border-radius: 2rem;
+  }
+
+  .status-launched { background: #E8F5E9; color: #2E7D32; }
+  .status-dev { background: #FFF3E0; color: #E65100; }
+  .status-upcoming { background: #EEF2FF; color: #3949AB; }
+
+  .project-image {
+    position: relative;
+    overflow: hidden;
+    background: var(--ink);
+  }
+
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.82;
+    transition: transform 0.6s ease, opacity 0.3s ease;
+  }
+
+  .project:hover .project-image img { transform: scale(1.04); opacity: 0.95; }
+
+  /* ABOUT */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .about-left {
+    padding: 4rem 3rem;
+    border-right: 1px solid var(--rule);
+  }
+
+  .about-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.25rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-title em { font-style: italic; color: var(--muted); }
+
+  .about-text {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-right { padding: 4rem 3rem; }
+
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+  .skill-group-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .skill-list { list-style: none; }
+
+  .skill-list li {
+    font-size: 0.82rem;
+    color: var(--muted);
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--rule);
+    line-height: 1.4;
+  }
+
+  footer {
+    padding: 2.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+  }
+
+  .footer-contact {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .version-badge {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: var(--accent);
+    color: white;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.8rem;
+    border-radius: 2rem;
+    z-index: 50;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { height: 45vh; }
+    .hero-left { padding: 2rem 1.5rem 3rem; }
+    .hero-stats { grid-template-columns: repeat(3,1fr); }
+    .project { grid-template-columns: 1fr; min-height: auto; }
+    .project-image { height: 260px; order: 1 !important; }
+    .project-content { order: 2 !important; border: none !important; border-top: 1px solid var(--rule) !important; padding: 2rem 1.5rem; }
+    .about { grid-template-columns: 1fr; }
+    .about-left { border-right: none; border-bottom: 1px solid var(--rule); padding: 2rem 1.5rem; }
+    .about-right { padding: 2rem 1.5rem; }
+    .section-header { padding: 2rem 1.5rem 1.25rem; }
+    footer { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="version-badge">PM — Versatile</div>
+
+<nav>
+  <div class="nav-logo">David Pascual — Product Portfolio</div>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="mailto:waterdave81@gmail.com">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Product Manager & AI Builder</div>
+    <h1 class="hero-title">Defining<br>what's worth<br><em>building.</em></h1>
+    <p class="hero-desc">5+ years taking products from ambiguous opportunity to shipped reality — across enterprise, startup, and research environments. Engineering background that earns trust with dev teams. Product instinct that earns trust with stakeholders.</p>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">5+</span>
+        <span class="stat-label">Years PM/PO</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">6</span>
+        <span class="stat-label">Products Shipped</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Industries</span>
+      </div>
+    </div>
+
+    <div class="hero-tags">
+      <span class="tag tag-accent">Product Strategy</span>
+      <span class="tag tag-accent">AI Integration</span>
+      <span class="tag tag-accent">SaaS</span>
+      <span class="tag">IoT</span>
+      <span class="tag">Agile / Scrum</span>
+      <span class="tag">Discovery & Validation</span>
+      <span class="tag">Stakeholder Management</span>
+      <span class="tag">Go-to-Market</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-right-top">
+      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80" alt="Product work">
+    </div>
+    <div class="hero-right-bottom">
+      <span>waterdave81@gmail.com</span>
+      <span>+52 443 479 0466</span>
+      <span>Monterrey, MX</span>
+      <span>EN / ES — Remote</span>
+    </div>
+  </div>
+</section>
+
+<div id="projects">
+  <div class="section-header">
+    <span class="section-label">Selected Work</span>
+    <h2 class="section-title">Projects</h2>
+  </div>
+
+  <!-- 01 JOHN DEERE -->
+  <article class="project">
+    <div class="project-content">
+      <div class="project-top">
+        <div class="project-meta">
+          <span class="project-num">01</span>
+          <span class="project-type">Enterprise / Hardware-Software</span>
+        </div>
+        <div class="project-org">John Deere — Global Markets</div>
+        <h3 class="project-name">Suspension Control System for Brazilian Market Sprayer</h3>
+        <p class="project-desc">Chassis & PowerTrain domain. A high-clearance sprayer engineered for Brazil's steep agricultural terrain — requiring deep discovery with field operators and cross-functional delivery across global engineering teams.</p>
+        <div class="project-block">
+          <div class="project-block-label">The Challenge</div>
+          <div class="project-block-text">Translate real-world field constraints from Brazilian operators into precise embedded software requirements — while coordinating delivery across multicultural teams in multiple time zones.</div>
+        </div>
+        <div class="project-block" style="margin-top:0.875rem">
+          <div class="project-block-label">The Outcome</div>
+          <div class="project-block-text">Suspension transition performance improved by 26%. Product on track for global launch in 2027.</div>
+        </div>
+        <div class="impact">↑ 26% suspension transition performance</div>
+      </div>
+      <div class="project-footer">
+        <span class="project-role">Developer / Product Owner</span>
+        <span class="project-status status-upcoming">Launch 2027</span>
+      </div>
+    </div>
+    <div class="project-image">
+      <img src="https://drive.google.com/file/d/1Bj-HWDsdlxuajE-xU2J1MXXJJl59dRxP/view?usp=sharing" alt="John Deere Sprayer">
+    </div>
+  </article>
+
+  <!-- 02 SAAS PLATFORM -->
+  <article class="project">
+    <div class="project-content">
+      <div class="project-top">
+        <div class="project-meta">
+          <span class="project-num">02</span>
+          <span class="project-type">SaaS / Software</span>
+        </div>
+        <div class="project-org">STGuimel</div>
+        <h3 class="project-name">Sensing as a Service — IoT Data Platform</h3>
+        <p class="project-desc">A SaaS platform to host, visualize, and analyze data from distributed IoT sensors — translating raw environmental data into actionable intelligence for government users.</p>
+        <div class="project-block">
+          <div class="project-block-label">The Challenge</div>
+          <div class="project-block-text">Design a user-friendly interface for non-technical government stakeholders that could handle high-frequency sensor data, geospatial visualization, and multi-organization user management at scale.</div>
+        </div>
+        <div class="project-block" style="margin-top:0.875rem">
+          <div class="project-block-label">The Outcome</div>
+          <div class="project-block-text">Scalable architecture with full API integration, real-time geospatial pollution mapping, and user management. Live in production with Consejo de Nuevo León.</div>
+        </div>
+        <div class="impact">↗ Live in production — government users</div>
+      </div>
+      <div class="project-footer">
+        <span class="project-role">Product Manager</span>
+        <span class="project-status status-launched">Launched 2025</span>
+      </div>
+    </div>
+    <div class="project-image">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80" alt="Data dashboard">
+    </div>
+  </article>
+
+  <!-- 03 AI AGENT -->
+  <article class="project">
+    <div class="project-content">
+      <div class="project-top">
+        <div class="project-meta">
+          <span class="project-num">03</span>
+          <span class="project-type">AI / LLM Agent</span>
+        </div>
+        <div class="project-org">STGuimel</div>
+        <h3 class="project-name">G-Aire — LLM Agent for Air Quality Analysis</h3>
+        <p class="project-desc">An autonomous LLM-based agent that connects to the platform API, analyzes real-time sensor data, and delivers environmental insights in natural language — making complex data accessible to non-technical users.</p>
+        <div class="project-block">
+          <div class="project-block-label">The Challenge</div>
+          <div class="project-block-text">Build an AI agent that synthesizes complex multi-sensor data with minimum resource consumption — and define evaluation criteria for consistency, hallucination rate, and factual accuracy before production deployment.</div>
+        </div>
+        <div class="project-block" style="margin-top:0.875rem">
+          <div class="project-block-label">The Outcome</div>
+          <div class="project-block-text">Multiple LLM models under structured evaluation — assessing behavioral alignment against real sensor ground truth. Iterating on prompts, guardrails, and agent instructions.</div>
+        </div>
+      </div>
+      <div class="project-footer">
+        <span class="project-role">Developer / Product Manager</span>
+        <span class="project-status status-dev">Under Development</span>
+      </div>
+    </div>
+    <div class="project-image">
+      <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=900&q=80" alt="AI visualization">
+    </div>
+  </article>
+
+  <!-- 04 G-TRAP -->
+  <article class="project">
+    <div class="project-content">
+      <div class="project-top">
+        <div class="project-meta">
+          <span class="project-num">04</span>
+          <span class="project-type">Embedded AI / Field Deployment</span>
+        </div>
+        <div class="project-org">REEFAC — Reef Aquaculture Conservancy</div>
+        <h3 class="project-name">G-Trap — Autonomous Reef Monitoring System</h3>
+        <p class="project-desc">An autonomous AI computer vision system for reef biodiversity monitoring — deployed underwater for researchers and governments. Built from first principles under real marine constraints.</p>
+        <div class="project-block">
+          <div class="project-block-label">The Challenge</div>
+          <div class="project-block-text">The device's underwater installation location made maintenance access extremely complex — maximum operational autonomy was a hard requirement, not a preference.</div>
+        </div>
+        <div class="project-block" style="margin-top:0.875rem">
+          <div class="project-block-label">The Outcome</div>
+          <div class="project-block-text">AI CV camera with deep sleep power strategy delivering ~15 days of battery life in real underwater deployment conditions. Launched and operational in 2025.</div>
+        </div>
+        <div class="impact">~15 days battery life in field conditions</div>
+      </div>
+      <div class="project-footer">
+        <span class="project-role">Product Manager</span>
+        <span class="project-status status-launched">Launched 2025</span>
+      </div>
+    </div>
+    <div class="project-image">
+      <img src="https://images.unsplash.com/photo-1682687220063-4742bd7fd538?w=900&q=80" alt="Underwater reef">
+    </div>
+  </article>
+
+  <!-- 05 SYNTI / GTM -->
+  <article class="project">
+    <div class="project-content">
+      <div class="project-top">
+        <div class="project-meta">
+          <span class="project-num">05</span>
+          <span class="project-type">Market Research / GTM</span>
+        </div>
+        <div class="project-org">REEFAC — Climate Tech</div>
+        <h3 class="project-name">Synti — Embedded CV Platform Go-to-Market</h3>
+        <p class="project-desc">Market research and investor narrative for an embedded computer vision platform targeting smart aquaculture, biodiversity monitoring, and environmental surveillance — sectors with combined markets exceeding $50B by 2030.</p>
+        <div class="project-block">
+          <div class="project-block-label">The Challenge</div>
+          <div class="project-block-text">Translate deeply technical embedded AI constraints into a compelling investment narrative for international audiences — Asian and Canadian investors unfamiliar with field-deployed CV systems.</div>
+        </div>
+        <div class="project-block" style="margin-top:0.875rem">
+          <div class="project-block-label">The Outcome</div>
+          <div class="project-block-text">Full investor pitch deck: problem framing, $50B+ market sizing, architecture narrative, GTM strategy, and revenue model. Delivered to international investors in 2025.</div>
+        </div>
+        <div class="impact">$50B+ addressable market identified</div>
+      </div>
+      <div class="project-footer">
+        <span class="project-role">Product Manager / Market Research</span>
+        <span class="project-status status-launched">Delivered 2025</span>
+      </div>
+    </div>
+    <div class="project-image">
+      <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=900&q=80" alt="Ocean technology">
+    </div>
+  </article>
+
+</div>
+
+<section id="about" class="about">
+  <div class="about-left">
+    <h2 class="about-title">Product thinking<br>with an <em>engineer's<br>instinct.</em></h2>
+    <p class="about-text">I started as an embedded software engineer — building systems where a bad call had real consequences. That shaped how I approach product: with precision, with respect for technical constraints, and with a bias toward shipping things that actually work.</p>
+    <p class="about-text">Today I work across the full product lifecycle — from discovery and strategy to delivery, go-to-market, and AI integration. I'm most effective in environments where the problem is ambiguous and the stakes are real.</p>
+    <p class="about-text">B.Eng. Electronics & Digital Systems — TECNM, 2021.<br>Monterrey, MX. Open to remote international roles.</p>
+  </div>
+  <div class="about-right">
+    <div class="skills-grid">
+      <div>
+        <div class="skill-group-label">Product</div>
+        <ul class="skill-list">
+          <li>Vision & Roadmap</li>
+          <li>User Discovery</li>
+          <li>Backlog Management</li>
+          <li>Go-to-Market Strategy</li>
+          <li>Stakeholder Alignment</li>
+          <li>KPI Design & Tracking</li>
+        </ul>
+      </div>
+      <div>
+        <div class="skill-group-label">AI & Technical</div>
+        <ul class="skill-list">
+          <li>LLM Agent Development</li>
+          <li>ML Pipeline Design</li>
+          <li>IoT Systems</li>
+          <li>Computer Vision</li>
+          <li>Embedded Systems</li>
+          <li>SaaS Architecture</li>
+        </ul>
+      </div>
+      <div>
+        <div class="skill-group-label">Methods & Tools</div>
+        <ul class="skill-list">
+          <li>Agile / Scrum</li>
+          <li>OKRs & Metrics</li>
+          <li>Root Cause Analysis</li>
+          <li>Linear · Azure DevOps</li>
+          <li>Tableau · Power BI</li>
+          <li>Notion · Slack</li>
+        </ul>
+      </div>
+      <div>
+        <div class="skill-group-label">Languages</div>
+        <ul class="skill-list">
+          <li>Spanish — Native</li>
+          <li>English — C1 Advanced</li>
+          <li>Portuguese — A1</li>
+          <li>Hebrew — A2</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">David Pascual</div>
+  <div class="footer-contact">
+    <span>waterdave81@gmail.com</span>
+    <span>+52 443 479 0466</span>
+    <span>Monterrey, MX</span>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.project').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
